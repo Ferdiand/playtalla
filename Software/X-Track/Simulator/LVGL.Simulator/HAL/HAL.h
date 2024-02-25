@@ -23,6 +23,18 @@
 #ifndef __HAL_SIM_H
 #define __HAL_SIM_H
 
+#include <uv.h>
+
 #include "Common/HAL/HAL.h"
+
+namespace HAL {
+
+void esp_init();
+void esp_update();
+void esp_on_connect(uv_connect_t *req, int status);
+void esp_on_read(uv_stream_t *stream, ssize_t nread, const uv_buf_t *buf);
+void esp_alloc_buffer(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf);
+void esp_process_response(const char *response);
+}
 
 #endif

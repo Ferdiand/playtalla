@@ -23,7 +23,7 @@ CFLAGS ?= 	-O3 -g0 $(INCLUDE_CFG) $(WARNING_CFG) \
 			-DLV_COLOR_DEPTH=32 -DLV_COLOR_16_SWAP=0 -DLV_FS_PC_PATH=\"../../../\" \
 			-DCONFIG_MAP_EXT_NAME_DEFAULT=\"png\"
 CXXFLAGS ?= $(CFLAGS)
-LDFLAGS ?= -lm -lstdc++
+LDFLAGS ?= -lm -lstdc++ -luv -lcjson
 BIN = xtrack
 
 #Collect the files to compile
